@@ -1,5 +1,4 @@
 import { Button } from "@workspace/ui/components/button"
-import {add} from "@workspace/math/add"
 import { Input } from "@workspace/ui/components/input"
 
 export default function Page() {
@@ -11,7 +10,6 @@ export default function Page() {
           <p>You may now add components and start building.</p>
           <p>We&apos;ve already added the button component for you.</p>
           <Button className="mt-2">Button</Button>
-          <p>{add(2, 2)}</p>
           <Input />
         </div>
         <div className="text-muted-foreground font-mono text-xs">
