@@ -34,3 +34,38 @@ npm-debug.log*
 # Misc
 .DS_Store
 *.pem
+# Logs
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+Thumbs.db
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment
+.env*.local
+
+# Cache
+.cache
+
+# Temporary
+tmp
+temp
+
+# Android / Capacitor
+android/.gradle
+android/build
+android/app/build
+
+# Prisma
+prisma/dev.db
+prisma/dev.db-journal
