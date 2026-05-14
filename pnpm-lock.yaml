@@ -84,12 +84,18 @@ importers:
 
   apps/widget:
     dependencies:
+      '@workspace/backend':
+        specifier: workspace:*
+        version: link:../../packages/backend
       '@workspace/math':
         specifier: workspace:*
         version: link:../../packages/math
       '@workspace/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      convex:
+        specifier: ^1.38.0
+        version: 1.38.0(react@19.2.4)
       lucide-react:
         specifier: ^1.14.0
         version: 1.14.0(react@19.2.4)
