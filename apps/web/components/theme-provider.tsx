@@ -2,17 +2,12 @@
 
 import * as React from "react"
 import { ThemeProvider as NextThemesProvider, useTheme } from "next-themes"
-import { ConvexProvider, ConvexReactClient } from "convex/react";
 
-const convex = new ConvexReactClient (process.env.NEXT_PUBLIC_CONVEX_URL || "");
-
-function ThemeProvider({children, ...props}: React.ComponentProps<typeof NextThemesProvider>) {
-  return (
-    
-    <ConvexProvider client={convex}>
-      {children}
-    </ConvexProvider>
-  )
+function ThemeProvider({
+  children,
+  ...props
+}: React.ComponentProps<typeof NextThemesProvider>) {
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }
 
 function isTypingTarget(target: EventTarget | null) {
@@ -33,21 +28,10 @@ function ThemeHotkey() {
 
   React.useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
-      if (event.defaultPrevented || event.repeat) {
-        return
-      }
-
-      if (event.metaKey || event.ctrlKey || event.altKey) {
-        return
-      }
-
-      if (event.key.toLowerCase() !== "d") {
-        return
-      }
-
-      if (isTypingTarget(event.target)) {
-        return
-      }
+      if (event.defaultPrevented || event.repeat) return
+      if (event.metaKey || event.ctrlKey || event.altKey) return
+      if (event.key.toLowerCase() !== "d") return
+      if (isTypingTarget(event.target)) return
 
       setTheme(resolvedTheme === "dark" ? "light" : "dark")
     }
@@ -62,4 +46,4 @@ function ThemeHotkey() {
   return null
 }
 
-export { ThemeProvider }
+export { ThemeProvider, ThemeHotkey }

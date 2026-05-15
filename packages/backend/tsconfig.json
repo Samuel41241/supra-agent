@@ -5,6 +5,7 @@
     "paths": {
       "@workspace/backend/*": ["./convex/*"],
     },
+    "types": ["node"]
 
   },
   "include": ["."],
